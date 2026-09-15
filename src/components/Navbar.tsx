@@ -89,7 +89,7 @@ export const Navbar: React.FC<{ onOpenQuoteModal?: () => void }> = ({ onOpenQuot
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-slate-700 hover:text-[#fc520a] hover:bg-orange-50 transition-colors cursor-pointer"
+              className="p-2 rounded-xl text-[#0d48ff] bg-slate-100 hover:bg-slate-200 transition-colors cursor-pointer"
               aria-label="Abrir menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -100,7 +100,7 @@ export const Navbar: React.FC<{ onOpenQuoteModal?: () => void }> = ({ onOpenQuot
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-orange-100 px-4 pt-3 pb-6 space-y-3 shadow-lg animate-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden bg-[#f7eddb] border-b border-orange-100 px-4 pt-3 pb-6 space-y-3 shadow-lg animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a

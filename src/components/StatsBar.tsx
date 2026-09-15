@@ -24,7 +24,7 @@ export const StatsBar: React.FC = () => {
             </div>
 
             {/* Bloco 2: ATENDIMENTO EM TODO O BRASIL */}
-            <div className="flex flex-row items-center justify-start md:justify-center px-4 md:px-8 lg:px-12 md:border-r border-white gap-3 sm:gap-4 lg:gap-6 py-2">
+            <div className="flex flex-row items-center justify-center px-4 md:px-8 lg:px-12 md:border-r border-white gap-3 sm:gap-4 lg:gap-6 py-2">
               <div className="flex items-center justify-center min-w-[48px] lg:min-w-[64px] xl:min-w-[72px]">
                 <BrazilMapIcon size={54} color="#FFFFFF" className="shrink-0 w-12 h-12 lg:w-16 lg:h-16 xl:w-[72px] xl:h-[72px]" filled={true} />
               </div>
@@ -39,7 +39,7 @@ export const StatsBar: React.FC = () => {
             </div>
 
             {/* Bloco 3: DIVERSAS ÁREAS ACADÊMICAS */}
-            <div className="flex flex-row items-center justify-start md:justify-center px-4 md:px-8 lg:px-12 gap-3 sm:gap-4 lg:gap-6 py-2">
+            <div className="flex flex-row items-center justify-center px-4 md:px-8 lg:px-12 gap-3 sm:gap-4 lg:gap-6 py-2">
               <div className="flex items-center justify-center min-w-[48px] lg:min-w-[64px] xl:min-w-[72px]">
                 <GraduationCapIcon size={54} color="#FFFFFF" className="shrink-0 w-12 h-12 lg:w-16 lg:h-16 xl:w-[72px] xl:h-[72px]" strokeWidth={8} />
               </div>

@@ -24,28 +24,28 @@ export const CtaSection: React.FC = () => {
         </div>
 
         {/* Giant Lifebuoy on Left Edge (Cut exactly in half, and cut at the bottom) */}
-        <div className="absolute left-0 top-[65%] md:top-[70%] lg:top-[75%] -translate-y-1/2 -translate-x-[45%] md:-translate-x-[50%] pointer-events-none z-30 select-none opacity-100">
+        <div className="absolute left-0 top-[50%] md:top-[70%] lg:top-[75%] -translate-y-1/2 -translate-x-[55%] md:-translate-x-[50%] pointer-events-none z-30 select-none opacity-100">
           <img
             src="/assets/boia.png"
             alt="Boia salva-vidas SOS Acadêmicos"
-            className="w-[200px] sm:w-[240px] md:w-[280px] lg:w-[340px] xl:w-[400px] h-auto object-contain drop-shadow-2xl -rotate-90"
+            className="w-[240px] sm:w-[240px] md:w-[280px] lg:w-[340px] xl:w-[400px] h-auto object-contain drop-shadow-2xl -rotate-90"
             referrerPolicy="no-referrer"
           />
         </div>
 
-        {/* Right Blue Splash Blob */}
-        <div className="absolute -right-8 -bottom-10 pointer-events-none z-10 opacity-100">
-          <svg width="320" height="320" viewBox="0 0 320 320" fill="#0d48ff" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="260" cy="260" r="120" />
-            <circle cx="140" cy="190" r="60" />
-            <circle cx="170" cy="110" r="50" />
-            <circle cx="270" cy="100" r="45" />
-            <path d="M140 190 L170 110 L270 100 L260 260 L140 260 Z" />
+        {/* Right Pink Splash Blob */}
+        <div className="absolute -right-10 -bottom-10 pointer-events-none z-10 opacity-100">
+          <svg width="280" height="280" viewBox="0 0 280 280" fill="#f20961" xmlns="http://www.w3.org/2000/svg" className="-scale-x-100">
+            <circle cx="40" cy="240" r="100" />
+            <circle cx="160" cy="220" r="50" />
+            <circle cx="180" cy="150" r="40" />
+            <circle cx="100" cy="120" r="50" />
+            <path d="M100 120 L180 150 L160 220 L40 240 Z" />
           </svg>
         </div>
 
         <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-40">
-          <div className="flex flex-col md:flex-row items-center justify-center sm:justify-end md:justify-center gap-4 sm:gap-6 md:gap-10 lg:gap-16 xl:gap-24 w-full pl-[80px] sm:pl-[120px] md:pl-[140px] lg:pl-[160px]">
+          <div className="flex flex-col md:flex-row items-center justify-center sm:justify-end md:justify-center gap-4 sm:gap-6 md:gap-10 lg:gap-16 xl:gap-24 w-full pl-[50px] sm:pl-[120px] md:pl-[140px] lg:pl-[160px]">
             
             {/* Column 1: Headline */}
             <div className="text-left shrink-0">
