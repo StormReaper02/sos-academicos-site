@@ -1,0 +1,103 @@
+import React from 'react';
+import { Phone, FileText, Settings, CheckCircle2 } from 'lucide-react';
+import { DoodleBurst } from './BrandGraphics';
+
+export const HowItWorksSection: React.FC = () => {
+  const steps = [
+    {
+      num: '01',
+      title: 'Você chama',
+      desc: 'Envia as orientações,\narquivos e prazo.',
+      color: '#3447a1', // The exact blue/purple from the image
+      icon: (
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-9 h-9 text-white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.66-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.575-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+      ),
+    },
+    {
+      num: '02',
+      title: 'A gente analisa',
+      desc: 'Verificamos sua demanda\ne passamos as informações.',
+      color: '#d6461a', // Darker orange matching the image
+      icon: <FileText className="w-9 h-9 text-white" strokeWidth={1.5} />,
+    },
+    {
+      num: '03',
+      title: 'Começamos o suporte',
+      desc: 'O trabalho é desenvolvido\nconforme suas orientações.',
+      color: '#d91d6b', // Darker pink matching the image
+      icon: <Settings className="w-9 h-9 text-white" strokeWidth={1.5} />,
+    },
+    {
+      num: '04',
+      title: 'Você recebe',
+      desc: 'O material é entregue\ndentro do prazo combinado\npara conferência.',
+      color: '#cca025', // Yellow/Gold matching the image
+      icon: <CheckCircle2 className="w-9 h-9 text-white" strokeWidth={1.5} />,
+    },
+  ];
+
+  return (
+    <section id="como-funciona" className="py-12 sm:py-16 bg-[#f7eddb] relative overflow-hidden">
+      <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center w-full mx-auto mb-16 relative flex justify-center">
+          <div className="relative inline-flex items-center justify-center">
+            <h2 className="font-display font-black text-2xl sm:text-3xl md:text-[40px] uppercase tracking-tight text-[#0d48ff] m-0 leading-none">
+              PEDIR <span className="text-[#fc520a]">SOS É</span> SIMPLES.
+            </h2>
+            <div className="absolute -right-5 sm:-right-8 -top-3 sm:-top-5">
+              <DoodleBurst color="#fc520a" size={26} angle={15} />
+            </div>
+          </div>
+        </div>
+
+        {/* Steps timeline */}
+        <div className="relative w-full mx-auto pb-4">
+          {/* Horizontal Dotted Connecting Line (Desktop) */}
+          <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] border-t-[1.5px] border-dashed border-gray-400/60 z-0" />
+
+          {/* 4 Steps Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-6 relative z-10">
+            {steps.map((step, idx) => (
+              <div key={step.num} className="flex flex-col items-center text-center">
+                
+                {/* Icon Circle with Small Number Badge */}
+                <div className="relative mb-5 group h-[88px] w-[88px] flex items-center justify-center">
+                  <div
+                    className="w-full h-full rounded-full flex items-center justify-center transform group-hover:scale-[1.03] transition-transform duration-300"
+                    style={{ backgroundColor: step.color }}
+                  >
+                    {step.icon}
+                  </div>
+
+                  {/* Number Badge (positioned mid-left) */}
+                  <div
+                    className="absolute top-1/2 -translate-y-1/2 -left-3 w-8 h-8 rounded-full text-white font-display font-bold text-[14px] flex items-center justify-center border-2 border-[#f7eddb] shadow-sm"
+                    style={{ backgroundColor: step.color }}
+                  >
+                    {step.num}
+                  </div>
+                </div>
+
+                {/* Title */}
+                <h3 className="font-display font-bold text-[19px] text-[#3447a1] mb-2 leading-tight">
+                  {step.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-[14px] font-medium text-slate-700/90 leading-[1.4] whitespace-pre-line max-w-[210px]">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+

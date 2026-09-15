@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fredoka", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-handwriting: "Caveat", cursive, sans-serif;
+
+  --color-brand-orange: #fc520a;
+  --color-brand-orange-dark: #e04402;
+  --color-brand-blue: #0d48ff;
+  --color-brand-blue-dark: #0837cc;
+  --color-brand-pink: #f20961;
+  --color-brand-yellow: #ffae1e;
+  --color-brand-navy: #1b09b7;
+  --color-brand-cream: #f7eddb;
+  --color-brand-cream-light: #f7eddb;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: #1e293b;
+    background-color: #f7eddb;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom continuous marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Float animation for decorative lifebuoy and badges */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 5s ease-in-out 2s infinite;
+}
+
+/* Pulse glow for CTA */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s ease-in-out infinite;
+}
+
+/* Sea Waves Animation for dividers simulating sea currents */
+@keyframes waveFlow {
+  0% { transform: translateX(0) translateZ(0) scaleY(1); }
+  50% { transform: translateX(-25%) translateZ(0) scaleY(1.08); }
+  100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+}
+
+@keyframes waveFlowReverse {
+  0% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+  50% { transform: translateX(-25%) translateZ(0) scaleY(0.92); }
+  100% { transform: translateX(0) translateZ(0) scaleY(1); }
+}
+
+.animate-wave-flow {
+  animation: waveFlow 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  will-change: transform;
+}
+
+.animate-wave-flow-slow {
+  animation: waveFlowReverse 18s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  will-change: transform;
+}
+
+/* Organic blob sway animation for Hero accents */
+@keyframes seaSway {
+  0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
+  33% { transform: translateY(-8px) scale(1.03) rotate(1.5deg); }
+  66% { transform: translateY(6px) scale(0.98) rotate(-1deg); }
+}
+
+.animate-sea-sway {
+  animation: seaSway 7s ease-in-out infinite;
+}

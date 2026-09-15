@@ -1,0 +1,6 @@
+{
+  "name": "SOS Acadêmicos",
+  "description": "Seu salva-vidas acadêmico - Landing page oficial com suporte para TCCs, artigos, projetos, relatórios e atividades acadêmicas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
