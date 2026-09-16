@@ -56,12 +56,22 @@ export const TestimonialsSection: React.FC = () => {
                 className="bg-white rounded-3xl p-5 sm:p-7 shadow-sm hover:shadow-xl flex flex-col items-center text-center gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:ring-2 hover:ring-[#fc520a]/20 group cursor-pointer h-full"
               >
                 {/* Avatar */}
-                <div className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 mx-auto">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 mx-auto rounded-full bg-slate-100 flex items-center justify-center overflow-hidden border border-slate-200">
                   <img 
                     src={item.image} 
                     alt={item.name} 
-                    className="w-full h-full object-cover rounded-full shadow-sm"
+                    className="w-full h-full object-cover shadow-sm"
                     loading="lazy"
+                    onError={(e) => {
+                      // Fallback: Se a imagem do Instagram der erro de CORS ou expirar, mostra as iniciais da pessoa
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallbackDiv = document.createElement('div');
+                      fallbackDiv.className = 'w-full h-full flex items-center justify-center bg-slate-200 text-[#0d48ff] font-display font-bold text-2xl';
+                      const initials = item.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+                      fallbackDiv.innerText = initials;
+                      target.parentElement?.appendChild(fallbackDiv);
+                    }}
                   />
                 </div>
 
