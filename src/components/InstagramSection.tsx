@@ -16,7 +16,7 @@ export const InstagramSection: React.FC = () => {
         </div>
 
         {/* 6 Visual Instagram Preview Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 max-w-[1000px] mx-auto mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 max-w-[1000px] mx-auto mb-8">
           
           {INSTAGRAM_POSTS.map((post) => (
             <a
