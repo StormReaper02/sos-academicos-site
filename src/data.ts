@@ -150,10 +150,10 @@ export const TESTIMONIALS: TestimonialItem[] = [
     id: '1',
     name: 'Ilza Carvalho',
     course: 'Personal Trainer',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    image: 'https://instagram.fbel12-1.fna.fbcdn.net/v/t51.82787-19/800540271_18043354991823681_4888482892194931996_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fbel12-1.fna.fbcdn.net&_nc_cat=109&_nc_oc=Q6cZ2gECHEEicJ-ZG4ShkLlji-SkFK-CaCcMeNfDHkIlwXrW6FO4o4jdQfjSRJ859b__Duc&_nc_ohc=uUPPSbp118wQ7kNvwE2Kg8P&_nc_gid=QpPfzatsKsXfaNWHPEsR2A&edm=APoiHPcBAAAA&ccb=7-5&oh=00_AQLqFwBz5ubFKZ1FaHKkKEpLuQhsAC8cZbSP03zlEoRPkw&oe=6AB064E4&_nc_sid=22de04',
     rating: 5,
     text: 'Opa! Não tenho palavras para expressar o quão foi prazeroso usufruir do trabalho de você, gratidão e olha Recomendo 100% muito bom, Qualidade e mas uma vez excelência em tudo.',
-    linkUrl: INSTAGRAM_URL,
+    linkUrl: 'https://www.instagram.com/p/DSIIXqHEeG_/',
     verified: true,
   },
   {
