@@ -1,64 +1,22 @@
 import React, { useState } from 'react';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { TESTIMONIALS } from '../data';
 
 export const TestimonialsSection: React.FC = () => {
   const [startIndex, setStartIndex] = useState(0);
 
-  const testimonials = [
-    {
-      id: '1',
-      name: 'Ana Paula Souza',
-      course: 'Enfermagem',
-      text: 'Entrega dentro do prazo e exatamente como eu precisava. Super recomendo!',
-      rating: 5,
-      image: 'https://i.pravatar.cc/150?img=47',
-    },
-    {
-      id: '2',
-      name: 'Rafael Lima',
-      course: 'Administração',
-      text: 'Atendimento excelente, sempre muito atenciosos. O trabalho ficou impecável!',
-      rating: 5,
-      image: 'https://i.pravatar.cc/150?img=11',
-    },
-    {
-      id: '3',
-      name: 'Juliana Mendes',
-      course: 'Mestranda',
-      text: 'Me ajudaram em um momento decisivo do curso. Profissionais e muito dedicados!',
-      rating: 5,
-      image: 'https://i.pravatar.cc/150?img=5',
-    },
-    {
-      id: '4',
-      name: 'Marcos Vinicius',
-      course: 'Direito',
-      text: 'Trabalho entregue com formatação ABNT rigorosa e sem nenhum plágio. Nota máxima!',
-      rating: 5,
-      image: 'https://i.pravatar.cc/150?img=12',
-    },
-    {
-      id: '5',
-      name: 'Beatriz Costa',
-      course: 'Psicologia',
-      text: 'Estava desesperada com o prazo do estágio e eles me salvaram com muito profissionalismo.',
-      rating: 5,
-      image: 'https://i.pravatar.cc/150?img=41',
-    },
-  ];
-
   const prevSlide = () => {
-    setStartIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    setStartIndex((prev) => (prev === 0 ? TESTIMONIALS.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setStartIndex((prev) => (prev >= testimonials.length - 1 ? 0 : prev + 1));
+    setStartIndex((prev) => (prev >= TESTIMONIALS.length - 1 ? 0 : prev + 1));
   };
 
   const visibleTestimonials = [
-    testimonials[startIndex % testimonials.length],
-    testimonials[(startIndex + 1) % testimonials.length],
-    testimonials[(startIndex + 2) % testimonials.length],
+    TESTIMONIALS[startIndex % TESTIMONIALS.length],
+    TESTIMONIALS[(startIndex + 1) % TESTIMONIALS.length],
+    TESTIMONIALS[(startIndex + 2) % TESTIMONIALS.length],
   ];
 
   return (
@@ -90,9 +48,12 @@ export const TestimonialsSection: React.FC = () => {
           {/* 3 Visible Testimonial Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 px-8 sm:px-6 py-2">
             {visibleTestimonials.map((item, idx) => (
-              <div
+              <a
+                href={item.linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 key={`${item.id}-${idx}`}
-                className="bg-white rounded-3xl p-5 sm:p-7 shadow-sm flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-5 transition-all duration-300"
+                className="bg-white rounded-3xl p-5 sm:p-7 shadow-sm hover:shadow-xl flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-5 transition-all duration-300 hover:-translate-y-1.5 hover:ring-2 hover:ring-[#fc520a]/20 group cursor-pointer"
               >
                 {/* Avatar */}
                 <div className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 mt-1">
@@ -121,18 +82,24 @@ export const TestimonialsSection: React.FC = () => {
                       ))}
                     </div>
 
-                    {/* Name & Course */}
+                    {/* Name, Course & Verified Badge */}
                     <div>
-                      <h3 className="font-display font-black text-[#0d48ff] text-[14px] sm:text-[15px] leading-tight">
+                      <h3 className="font-display font-black text-[#0d48ff] text-[14px] sm:text-[15px] leading-tight group-hover:text-[#fc520a] transition-colors">
                         {item.name}
                       </h3>
+                      {item.verified && (
+                        <div className="flex items-center justify-center sm:justify-start gap-1 mt-1 mb-0.5">
+                          <CheckCircle2 className="w-3 h-3 text-green-500" />
+                          <span className="text-[10px] font-bold text-green-600 uppercase tracking-wider">Cliente Verificado</span>
+                        </div>
+                      )}
                       <span className="text-[12px] sm:text-[13px] text-[#1b4984] block mt-0.5 font-medium">
                         {item.course}
                       </span>
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
@@ -148,10 +115,12 @@ export const TestimonialsSection: React.FC = () => {
 
         {/* Pagination Dots */}
         <div className="flex justify-center items-center gap-2 mt-8">
-          {[0, 1, 2].map((idx) => (
-            <div 
-              key={idx} 
-              className={`w-2.5 h-2.5 rounded-full ${idx === 0 ? 'bg-[#fc520a]' : 'bg-slate-300'}`} 
+          {TESTIMONIALS.map((_, idx) => (
+            <button 
+              key={idx}
+              onClick={() => setStartIndex(idx)}
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${idx === startIndex ? 'bg-[#fc520a]' : 'bg-slate-300 hover:bg-slate-400'}`}
+              aria-label={`Ir para depoimento ${idx + 1}`}
             />
           ))}
         </div>

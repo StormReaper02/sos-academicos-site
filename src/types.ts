@@ -28,13 +28,15 @@ export interface GuaranteeItem {
 }
 
 export interface TestimonialItem {
-  id: number;
+  id: string;
   name: string;
   course: string;
   university?: string;
-  avatar: string;
+  image: string;
   rating: number;
   text: string;
+  linkUrl: string;
+  verified: boolean;
 }
 
 export interface FaqItem {
