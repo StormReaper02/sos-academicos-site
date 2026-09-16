@@ -150,10 +150,10 @@ export const TESTIMONIALS: TestimonialItem[] = [
     id: '1',
     name: 'Ilza Carvalho',
     course: 'Personal Trainer',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    image: '/assets/avatar_ilza.jpg',
     rating: 5,
     text: 'Opa! Não tenho palavras para expressar o quão foi prazeroso usufruir do trabalho de você, gratidão e olha Recomendo 100% muito bom, Qualidade e mas uma vez excelência em tudo.',
-    linkUrl: '/assets/avatar_ilza.jpg',
+    linkUrl: 'https://www.instagram.com/p/DSIIXqHEeG_/',
     verified: true,
   },
   {
