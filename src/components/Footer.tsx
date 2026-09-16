@@ -1,6 +1,6 @@
 import React from 'react';
 import { SosLogo } from './BrandGraphics';
-import { getWhatsAppUrl } from '../data';
+import { getWhatsAppUrl, INSTAGRAM_URL } from '../data';
 import { Phone, Instagram } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
           {/* Ícones do Instagram e WhatsApp */}
           <div className="flex items-center gap-3">
             <a
-              href="https://instagram.com"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full border border-white/30 hover:border-white hover:bg-white/10 text-white flex items-center justify-center transition-colors shadow-xs"

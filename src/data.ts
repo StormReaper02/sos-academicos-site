@@ -1,6 +1,7 @@
 import { ServiceCategory, StepItem, GuaranteeItem, TestimonialItem, FaqItem, InstagramPost } from './types';
 
 export const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '5591985072416'; // Número do WhatsApp oficial da SOS Acadêmicos
+export const INSTAGRAM_URL = import.meta.env.VITE_INSTAGRAM_URL || 'https://www.instagram.com/trabalhos_academicos_sos/';
 export const DEFAULT_WHATSAPP_MESSAGE = 'Olá! Gostaria de um orçamento para meu trabalho acadêmico com a SOS Acadêmicos.';
 
 export const getWhatsAppUrl = (message?: string) => {
@@ -192,54 +193,6 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
 ];
 
-export const INSTAGRAM_POSTS: InstagramPost[] = [
-  {
-    id: 1,
-    type: 'brand',
-    title: 'SOS acadêmicos',
-    subtitle: 'Seu salva-vidas acadêmico',
-    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&auto=format&fit=crop&q=80',
-    likes: 412,
-    tag: '@sosacademicos',
-  },
-  {
-    id: 2,
-    type: 'tcc',
-    title: 'TCC com qualidade e segurança',
-    subtitle: 'Do tema à aprovação final',
-    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&auto=format&fit=crop&q=80',
-    likes: 538,
-    tag: '#TCCSemDrama',
-  },
-  {
-    id: 3,
-    type: 'partnership',
-    title: 'Mais que trabalhos, parcerias acadêmicas',
-    subtitle: 'Cuidamos do seu semestre com você',
-    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&auto=format&fit=crop&q=80',
-    likes: 389,
-    tag: '#VidaUniversitaria',
-  },
-  {
-    id: 4,
-    type: 'tips',
-    title: 'Dicas de ABNT & Normatização',
-    subtitle: 'Evite descontos bobos na sua nota',
-    imageUrl: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&auto=format&fit=crop&q=80',
-    likes: 624,
-    tag: '#DicasAcademicas',
-  },
-  {
-    id: 5,
-    type: 'brand',
-    title: 'SEU SALVA VIDAS acadêmico',
-    subtitle: 'Para todas as faculdades do Brasil',
-    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&auto=format&fit=crop&q=80',
-    likes: 710,
-    tag: '#SOSAcademicos',
-  },
-];
-
 export const FAQS: FaqItem[] = [
   {
     id: 1,
@@ -270,5 +223,44 @@ export const FAQS: FaqItem[] = [
     question: 'Meu curso não apareceu na lista. E agora?',
     answer:
       'Não se preocupe! Atendemos diversas áreas do conhecimento além das listadas. Fale conosco no WhatsApp informando seu curso e tema.',
+  },
+];
+
+export const INSTAGRAM_POSTS: InstagramPost[] = [
+  {
+    id: 'post-1',
+    imageUrl: '/assets/insta_post1.png', // Imersão Profissional
+    linkUrl: INSTAGRAM_URL,
+    altText: 'Imersão Profissional',
+  },
+  {
+    id: 'post-2',
+    imageUrl: '/assets/insta_post2.png', // Feedbacks
+    linkUrl: INSTAGRAM_URL,
+    altText: 'Feedbacks de clientes',
+  },
+  {
+    id: 'post-3',
+    imageUrl: '/assets/insta_post3.png', // Quem Somos
+    linkUrl: INSTAGRAM_URL,
+    altText: 'Quem somos',
+  },
+  {
+    id: 'post-4',
+    imageUrl: '/assets/insta_post4.png', // Bóia de salvação
+    linkUrl: INSTAGRAM_URL,
+    altText: 'A Bóia de salvação',
+  },
+  {
+    id: 'post-5',
+    imageUrl: '/assets/insta_post5.png', // Mona Lisa
+    linkUrl: INSTAGRAM_URL,
+    altText: 'Mona Lisa SOS',
+  },
+  {
+    id: 'post-6',
+    imageUrl: '/assets/insta_post6.png', // Do desespero ao alívio
+    linkUrl: INSTAGRAM_URL,
+    altText: 'Do desespero ao alívio',
   },
 ];

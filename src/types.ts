@@ -44,13 +44,10 @@ export interface FaqItem {
 }
 
 export interface InstagramPost {
-  id: number;
-  type: 'graphic' | 'tcc' | 'partnership' | 'tips' | 'brand';
-  title: string;
-  subtitle?: string;
-  imageUrl?: string;
-  likes: number;
-  tag: string;
+  id: string;
+  imageUrl: string;
+  linkUrl: string;
+  altText: string;
 }
 
 export interface QuoteFormData {
