@@ -152,7 +152,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     course: 'Personal Trainer',
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     rating: 5,
-    text: 'Entrega dentro do prazo e exatamente como eu precisava. Super recomendo!',
+    text: 'Opa! Não tenho palavras para expressar o quão foi prazeroso usufruir do trabalho de você, gratidão e olha Recomendo 100% muito bom, Qualidade e mas uma vez excelência em tudo.',
     linkUrl: INSTAGRAM_URL,
     verified: true,
   },

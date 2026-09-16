@@ -53,10 +53,10 @@ export const TestimonialsSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={`${item.id}-${idx}`}
-                className="bg-white rounded-3xl p-5 sm:p-7 shadow-sm hover:shadow-xl flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-5 transition-all duration-300 hover:-translate-y-1.5 hover:ring-2 hover:ring-[#fc520a]/20 group cursor-pointer"
+                className="bg-white rounded-3xl p-5 sm:p-7 shadow-sm hover:shadow-xl flex flex-col items-center text-center gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:ring-2 hover:ring-[#fc520a]/20 group cursor-pointer h-full"
               >
                 {/* Avatar */}
-                <div className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 mt-1">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 mx-auto">
                   <img 
                     src={item.image} 
                     alt={item.name} 
@@ -66,29 +66,29 @@ export const TestimonialsSection: React.FC = () => {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col flex-1 h-full justify-between">
-                  <div>
+                <div className="flex flex-col flex-1 h-full justify-between items-center w-full">
+                  <div className="w-full">
                     {/* Testimonial Quote */}
                     <p className="text-[13px] sm:text-[14px] font-medium text-[#1b4984] leading-snug mb-3">
                       "{item.text}"
                     </p>
                   </div>
 
-                  <div>
+                  <div className="flex flex-col items-center">
                     {/* Stars */}
-                    <div className="flex items-center justify-center sm:justify-start gap-1 mb-2">
+                    <div className="flex items-center justify-center gap-1 mb-2">
                       {[...Array(item.rating)].map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 fill-[#fcb712] text-[#fcb712]" />
                       ))}
                     </div>
 
                     {/* Name, Course & Verified Badge */}
-                    <div>
+                    <div className="flex flex-col items-center">
                       <h3 className="font-display font-black text-[#0d48ff] text-[14px] sm:text-[15px] leading-tight group-hover:text-[#fc520a] transition-colors">
                         {item.name}
                       </h3>
                       {item.verified && (
-                        <div className="flex items-center justify-center sm:justify-start gap-1 mt-1 mb-0.5">
+                        <div className="flex items-center justify-center gap-1 mt-1 mb-0.5">
                           <CheckCircle2 className="w-3 h-3 text-green-500" />
                           <span className="text-[10px] font-bold text-green-600 uppercase tracking-wider">Cliente Verificado</span>
                         </div>
