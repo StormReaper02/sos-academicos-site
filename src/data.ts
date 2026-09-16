@@ -1,11 +1,12 @@
 import { ServiceCategory, StepItem, GuaranteeItem, TestimonialItem, FaqItem, InstagramPost } from './types';
 
-export const WHATSAPP_NUMBER = '5511999999999'; // Número do WhatsApp oficial da SOS Acadêmicos
+export const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '5591985072416'; // Número do WhatsApp oficial da SOS Acadêmicos
 export const DEFAULT_WHATSAPP_MESSAGE = 'Olá! Gostaria de um orçamento para meu trabalho acadêmico com a SOS Acadêmicos.';
 
 export const getWhatsAppUrl = (message?: string) => {
   const text = encodeURIComponent(message || DEFAULT_WHATSAPP_MESSAGE);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+  const cleanNumber = String(WHATSAPP_NUMBER).replace(/\D/g, '');
+  return `https://wa.me/${cleanNumber}?text=${text}`;
 };
 
 export const SERVICE_CATEGORIES: ServiceCategory[] = [

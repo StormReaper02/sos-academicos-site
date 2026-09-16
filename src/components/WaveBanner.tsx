@@ -13,7 +13,7 @@ export const WaveBanner: React.FC = () => {
         <WaveDivider fillColor="#0d48ff" />
       </div>
 
-      <section className="relative bg-[#0d48ff] text-white py-8 sm:py-12 md:py-14 -mb-1 shadow-xl z-30 overflow-hidden">
+      <section className="relative bg-[#0d48ff] text-white py-8 sm:py-12 md:py-14 -mb-1 shadow-xl z-30 overflow-visible">
         
         {/* Boia salva-vidas cortando a lateral esquerda e na base inferior exatamente como na imagem enviada */}
         <div className="absolute -left-20 sm:-left-24 md:-left-32 lg:-left-40 top-10 sm:top-2 md:-top-4 lg:-top-8 xl:-top-12 pointer-events-none z-30 select-none opacity-100">
@@ -28,22 +28,18 @@ export const WaveBanner: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="flex flex-col md:flex-row items-start sm:items-center justify-between gap-6 sm:gap-8 text-left md:text-left pl-[110px] sm:pl-[200px] md:pl-[260px] lg:pl-[340px] xl:pl-[420px]">
             
-            {/* Texto principal e cursiva com os 3 risquinhos brancos (idêntico à imagem enviada) */}
+            {/* Texto principal e cursiva */}
             <div className="flex items-center gap-4 sm:gap-6">
-              {/* 3 tracinhos brancos inclinados */}
-              <div className="hidden sm:block shrink-0">
-                <DoodleBurst color="#FFFFFF" size={38} angle={-30} />
-              </div>
               <div>
                 <h2 className="font-display font-black text-[22px] sm:text-3xl md:text-4xl lg:text-[42px] tracking-tight uppercase leading-[1.08] text-white">
-                  A GENTE TE AJUDA <br />
-                  <span className="text-white">A </span>
-                  <span className="relative inline-block">
-                    <span className="font-handwriting font-bold text-[#fc520a] tracking-normal text-[26px] sm:text-4xl md:text-5xl drop-shadow-xs">
-                      NÃO AFUNDAR.
+                  A GENTE TE <br />
+                  AJUDA A <br />
+                  <span className="font-handwriting font-bold text-[#fc520a] tracking-normal text-[26px] sm:text-4xl md:text-5xl drop-shadow-xs block leading-[1.1] mt-1 sm:mt-2">
+                    NÃO <br />
+                    <span className="relative inline-block">
+                      AFUNDAR.
+                      <span className="absolute left-0 -bottom-1 sm:-bottom-1.5 w-full h-1 sm:h-1.5 bg-[#fc520a] rounded-full" />
                     </span>
-                    {/* Orange underline under NÃO AFUNDAR */}
-                    <span className="absolute left-0 -bottom-1 sm:-bottom-1.5 w-full h-1 sm:h-1.5 bg-[#fc520a] rounded-full" />
                   </span>
                 </h2>
               </div>

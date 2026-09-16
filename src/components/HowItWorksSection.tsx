@@ -48,9 +48,6 @@ export const HowItWorksSection: React.FC = () => {
             <h2 className="font-display font-black text-2xl sm:text-3xl md:text-[40px] uppercase tracking-tight text-[#0d48ff] m-0 leading-none">
               PEDIR <span className="text-[#fc520a]">SOS É</span> SIMPLES.
             </h2>
-            <div className="absolute -right-5 sm:-right-8 -top-3 sm:-top-5">
-              <DoodleBurst color="#fc520a" size={26} angle={15} />
-            </div>
           </div>
         </div>
 

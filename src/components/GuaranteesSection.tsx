@@ -37,9 +37,6 @@ export const GuaranteesSection: React.FC = () => {
           {/* Section Header */}
           <div className="text-center w-full mx-auto mb-10 sm:mb-14 relative z-10 flex justify-center">
             <div className="relative inline-flex items-center justify-center">
-              <div className="absolute -left-6 sm:-left-10 -top-4 sm:-top-6">
-                <DoodleBurst color="#fc520a" size={32} angle={-25} />
-              </div>
               <h2 className="font-display font-black text-2xl sm:text-3xl md:text-[40px] uppercase tracking-tight text-white m-0 leading-none">
                 O QUE VOCÊ RECEBE COM A <span className="text-[#fc520a]">SOS?</span>
               </h2>

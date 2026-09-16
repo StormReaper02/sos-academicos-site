@@ -63,23 +63,51 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           {/* Right Hero Column: Imagem original completa da Consultora + Notebook com Nossos Serviços */}
           <div className="lg:col-span-6 relative flex flex-col items-center justify-end sm:justify-center mt-12 sm:mt-4 lg:mt-0">
             
-            {/* Texto "Da Ideia à Entrega" adicionado como placeholder acima do notebook */}
-            <div className="absolute right-[5%] sm:right-[15%] md:right-[15%] lg:right-[15%] xl:right-[15%] top-[-60%] sm:top-[-20%] md:top-[-25%] lg:top-[-35%] xl:top-[-45%] z-30 flex flex-col items-center transform rotate-[-5deg]">
-              <span className="font-handwriting font-bold text-3xl sm:text-4xl lg:text-4xl xl:text-[42px] text-[#0d48ff] leading-none text-center">
-                DA IDEIA<br />À ENTREGA,<br />COM VOCÊ!
-              </span>
-              <span className="text-[#0d48ff] text-2xl lg:text-3xl mt-1">♡</span>
-            </div>
+            {/* Composição das imagens separadas (Moça + Notebook) conectadas com a base da onda */}
+            <div className="relative w-full sm:w-[105%] md:w-[110%] lg:w-[115%] xl:w-[125%] max-w-none z-10 -ml-4 sm:-ml-8 md:-ml-12 lg:-ml-16 xl:-ml-24 pb-6 sm:pb-8 mb-0 sm:-mb-8 md:-mb-12 lg:-mb-20 xl:-mb-24 flex justify-center items-end leading-none">
+              <div className="relative w-[95%] sm:w-full flex justify-center items-end leading-none">
+                
+                {/* Texto "Da Ideia à Entrega" posicionado acima do notebook */}
+                <div className="absolute right-[-6%] sm:right-[4%] md:right-[5%] lg:right-[0%] xl:right-[-4%] top-[-7%] sm:top-[5%] md:top-[10%] lg:top-[5%] xl:top-[0%] z-30 flex flex-col items-center transform rotate-[-5deg]">
+                  <span className="font-handwriting font-bold text-3xl sm:text-4xl lg:text-4xl xl:text-[42px] text-[#0d48ff] leading-none text-center">
+                    DA IDEIA<br />À ENTREGA,<br />COM VOCÊ!
+                  </span>
+                  <span className="text-[#0d48ff] text-2xl sm:text-2xl lg:text-3xl mt-1">♡</span>
+                </div>
 
-            {/* A imagem original completa fornecida com a moça e o notebook conectada com a base da onda */}
-            <div className="relative w-full sm:w-[105%] md:w-[110%] lg:w-[115%] xl:w-[125%] max-w-none z-30 -mr-0 sm:-mr-4 md:-mr-8 lg:-mr-12 xl:-mr-24 pb-8 sm:pb-0 mb-0 sm:-mb-16 md:-mb-24 lg:-mb-32 translate-y-0 sm:-translate-y-6 md:-translate-y-10 lg:-translate-y-14 xl:-translate-y-20 flex justify-center items-end leading-none">
-              <img
-                src="/assets/hero_consultora.png"
-                alt="Consultora acadêmica e notebook com lista de serviços da SOS Acadêmicos"
-                className="w-[95%] sm:w-full h-auto object-contain select-none pointer-events-none block align-bottom"
-                loading="eager"
-                referrerPolicy="no-referrer"
-              />
+                {/* Mulher (Atrás e à esquerda) */}
+                <img
+                  src="/assets/hero_mulher.png"
+                  alt="Consultora acadêmica"
+                  className="w-[85%] sm:w-[85%] md:w-[80%] lg:w-[75%] h-auto object-contain select-none pointer-events-none block relative z-10 -ml-32 sm:-ml-16 md:-ml-24 lg:-ml-32"
+                  loading="eager"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    // Fallback para a imagem antiga caso o upload ainda não tenha sido feito
+                    const target = e.target as HTMLImageElement;
+                    if (!target.src.includes('hero_consultora.png')) {
+                      target.src = '/assets/hero_consultora.png';
+                      target.className = "w-full h-auto object-contain select-none pointer-events-none block align-bottom relative z-10";
+                    }
+                  }}
+                />
+
+                {/* Notebook (Na frente e à direita) */}
+                <img
+                  src="/assets/hero_notebook.png"
+                  alt="Notebook com lista de serviços da SOS Acadêmicos"
+                  className="absolute bottom-0 sm:bottom-2 lg:bottom-4 -right-8 sm:-right-4 md:-right-2 lg:-right-10 w-[78%] sm:w-[70%] md:w-[65%] lg:w-[60%] h-auto object-contain select-none pointer-events-none z-20 drop-shadow-2xl"
+                  loading="eager"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    // Oculta o notebook solto caso o upload não tenha sido feito (evita duplicar com o fallback)
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+
+                {/* Base de mesa simulada para justificar o corte reto da foto e ancorar sobre a onda */}
+                <div className="absolute bottom-0 left-0 w-full h-2 sm:h-2.5 lg:h-3 bg-[#e4cbb4] shadow-[0_10px_20px_rgba(0,0,0,0.25)] z-0 rounded-b-lg border-t border-[#f2dfcd]" />
+              </div>
             </div>
           </div>
 

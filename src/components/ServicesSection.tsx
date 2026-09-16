@@ -69,7 +69,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl tracking-tight uppercase text-[#0d48ff]">
               QUAL É O SEU <span className="text-[#fc520a]">SOS?</span>
             </h2>
-            <DoodleBurst color="#fc520a" size={32} angle={10} className="mb-4" />
           </div>
           <p className="text-base sm:text-lg font-bold text-[#082b99] mt-1">
             Encontre o tipo de suporte que você precisa.
