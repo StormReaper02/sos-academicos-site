@@ -48,7 +48,7 @@ export const WaveBanner: React.FC = () => {
             {/* Complemento exato do mockup à direita */}
             <div className="max-w-md md:text-left lg:text-right">
               <p className="text-white font-medium text-sm sm:text-lg md:text-xl leading-snug pr-2 sm:pr-0">
-                Da graduação à pós-graduação, conte com suporte para organizar sua vida acadêmica.
+                Da Graduação à Doutorado, conte com suporte para organizar sua vida acadêmica.
               </p>
             </div>
           </div>
