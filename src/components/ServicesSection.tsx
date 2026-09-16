@@ -101,7 +101,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   <li key={item}>
                     <button
                       type="button"
-                      onClick={() => onSelectService && onSelectService(item)}
+                      onClick={() => {
+                        if (onSelectService) {
+                          // Se for "E muito mais!", passa vazio para o modal abrir sem serviço fixado
+                          onSelectService(item === 'E muito mais!' ? '' : item);
+                        }
+                      }}
                       className="hover:text-[#fc520a] transition-colors text-left cursor-pointer"
                     >
                       {item}
