@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getWhatsAppUrl, COURSES_LIST } from '../data';
 import { X, Send, CheckCircle2, ShieldAlert } from 'lucide-react';
 import { SosLogo } from './BrandGraphics';
@@ -14,10 +14,19 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   onClose,
   defaultService = '',
 }) => {
-  const [service, setService] = useState(defaultService || 'TCC');
-  const [course, setCourse] = useState('Direito');
+  const [service, setService] = useState(defaultService || '');
+  const [course, setCourse] = useState('');
   const [deadline, setDeadline] = useState('7 a 15 dias');
   const [notes, setNotes] = useState('');
+
+  useEffect(() => {
+    if (isOpen) {
+      setService(defaultService || '');
+      setCourse(''); // Limpa o curso
+      setDeadline('7 a 15 dias');
+      setNotes('');
+    }
+  }, [isOpen, defaultService]);
 
   if (!isOpen) return null;
 
