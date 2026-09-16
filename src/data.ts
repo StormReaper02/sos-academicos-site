@@ -172,7 +172,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     course: 'Personal Trainer',
     image: '/assets/avatar_danrley.jpg',
     rating: 5,
-    text: 'Satisfeitíssimo com o trabalho, excelente e com rapipez.',
+    text: 'Satisfeitíssimo com o trabalho, excelente e com rapidez.',
     linkUrl: 'https://www.instagram.com/p/DSIIXqHEeG_/',
     verified: true,
   },
