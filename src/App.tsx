@@ -24,15 +24,20 @@ export default function App() {
     setQuoteModalOpen(true);
   };
 
+  const handleOpenGenericQuote = () => {
+    setSelectedServiceForModal('');
+    setQuoteModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#f7eddb] text-slate-900 font-sans antialiased overflow-x-hidden">
       {/* Top Navbar */}
-      <Navbar onOpenQuoteModal={() => setQuoteModalOpen(true)} />
+      <Navbar onOpenQuoteModal={handleOpenGenericQuote} />
 
       {/* Main Page Sections */}
       <main className="flex-1">
         {/* Hero Section */}
-        <HeroSection onOpenQuoteModal={() => setQuoteModalOpen(true)} />
+        <HeroSection onOpenQuoteModal={handleOpenGenericQuote} />
 
         {/* Wave Banner */}
         <WaveBanner />
@@ -62,7 +67,7 @@ export default function App() {
         <FaqSection />
 
         {/* Primary CTA ("TÁ PRECISANDO DE UM SOS?") */}
-        <CtaSection onOpenQuoteModal={() => setQuoteModalOpen(true)} />
+        <CtaSection onOpenQuoteModal={handleOpenGenericQuote} />
       </main>
 
       {/* Footer */}
